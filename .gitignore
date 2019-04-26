@@ -1,0 +1,16 @@
+.cache
+.DS_Store
+.project
+.settings
+.tmproj
+Thumbs.db
+
+.CVS
+.git
+.hg
+.idea
+.svn
+
+node_modules
+npm-debug.log
+package-lock.json
