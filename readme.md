@@ -3,6 +3,12 @@
 
 ## Install
 
+Install the stylint
+
+`npm i stylint -D`
+
+Install stylint-webpack-plugin package
+
 `npm i stylint-webpack-plugin -D`
 
 If you want to use a custom reporter for a stylint, you also need to install it. For example:
