@@ -27,13 +27,28 @@ class StylintWebpackPlugin {
 	searchFiles() {
 		const options = this.options;
 		const reporter = this.reporter;
-		const files = FileHound.create().paths(this.options.files).discard(this.options.exclude).ext('.styl').find();
+		const files = FileHound.create().paths(this.options.files).discard(this.options.exclude).ext(['.styl', '.vue']).find();
 
 		files.then(files => {
 			files.forEach(file => {
 				fs.readFile(file, 'utf8', (err, data) => {
 					if (err) {
 						throw new Error(err);
+					}
+
+					if (/\.vue$/.test(file)) {
+						const lineBreaks = [];
+						const strings = data.split('\n');
+
+						strings.some(str => {
+							if (/lang="stylus"/.test(str)) {
+								return true;
+							} else {
+								lineBreaks.push('\n');
+							}
+						});
+
+						data = lineBreaks.join('') + data.match(/lang="stylus"\s?>([\s\S]+?)<\/style>/i)[1];
 					}
 
 					stylint(data, options.rules)

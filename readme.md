@@ -17,7 +17,7 @@ If you want to use a custom reporter for a stylint, you also need to install it.
 
 This webpack plugin for stylint, which supports specifying a directory or several directories of your project with a 
 stylus files. Those files will pass through the linter stylint. By default, lint will use the .stylintrc file in the 
-project root if present. But you can configure it in the options.
+project root if present. But you can configure it in the options. This plugin supports .styl and .vue files.
 
 ## Usage
 

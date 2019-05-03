@@ -1,6 +1,6 @@
 {
   "name": "stylint-webpack-plugin",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Webpack loader plugin for stylint(linter of stylus files)",
   "main": "index.js",
   "keywords": [
