@@ -1,4 +1,4 @@
-# stylint-webpack-plugin
+# @startingpoint/stylint-webpack-plugin
 *Webpack loader plugin for [stylint](https://github.com/SimenB/stylint) (linter of stylus files)*
 
 ## Install
@@ -7,9 +7,13 @@ Install the stylint
 
 `npm i stylint -D`
 
-Install stylint-webpack-plugin package
+Install @startingpoint/stylint-webpack-plugin package
 
-`npm i stylint-webpack-plugin -D`
+`npm i @startingpoint/stylint-webpack-plugin -D`
+
+or
+
+`yarn add --dev @startingpoint/stylint-webpack-plugin`
 
 If you want to use a custom reporter for a stylint, you also need to install it. For example:
 
@@ -24,7 +28,7 @@ project root if present. But you can configure it in the options. This plugin su
 In `webpack` config:
 
 ```
-const StylintWebpackPlugin = require('stylint-webpack-plugin');
+const StylintWebpackPlugin = require('@startingpoint/stylint-webpack-plugin');
 
 plugins: [
     new StylintWebpackPlugin({
