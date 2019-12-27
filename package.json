@@ -1,5 +1,5 @@
 {
-  "name": "stylint-webpack-plugin",
+  "name": "@startingpoint/stylint-webpack-plugin",
   "version": "0.2.1",
   "description": "Webpack loader plugin for stylint(linter of stylus files)",
   "main": "index.js",
@@ -11,9 +11,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh@github.com:Badalik/stylint-webpack-plugin.git"
+    "url": "git@github.com:Fontech/stylint-webpack-plugin.git"
   },
-  "author": "Badalik <badaliki@yandex.ru>",
+  "author": "Fontech",
   "license": "MIT",
   "engines": {
     "node": ">=6.4.0"
