@@ -39,6 +39,26 @@ plugins: [
 ]
 ```
 
+In `nuxt` config:
+
+```
+const StylintWebpackPlugin = require('@startingpoint/stylint-webpack-plugin');
+export default {
+    ...,
+
+    build: {
+    extend (config, ctx) {
+        if (ctx.isDev && ctx.isClient) {
+            config.plugins.push(new StylintWebpackPlugin({
+                files: ['./pages', './assets'],
+            }));
+        }
+    },
+
+    ...,
+}
+```
+
 ## Options
 
 |Name                 |Type            |Default        |Description                                                    |
