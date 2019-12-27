@@ -18,13 +18,13 @@ class StylintWebpackPlugin {
 
 	apply(compiler) {
 		compiler.hooks.done.tapAsync('StylintWebpackPlugin', (stats, callback) => {
-			this.searchFiles();
+			this.searchFiles(stats);
 
 			callback();
 		});
 	}
 
-	searchFiles() {
+	searchFiles(stats) {
 		const options = this.options;
 		const reporter = this.reporter;
 		const files = FileHound.create().paths(this.options.files).discard(this.options.exclude).ext(['.styl', '.vue']).find();
@@ -85,7 +85,8 @@ class StylintWebpackPlugin {
 
 									msg += `\n${this.cache.msg}`;
 
-									console.log(msg);
+									console.log(msg); // print in terminal
+									stats.compilation.errors.push(msg) // print at site
 								}
 
 								this.resetOnChange();
