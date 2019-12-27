@@ -48,7 +48,13 @@ class StylintWebpackPlugin {
 							}
 						});
 
-						data = lineBreaks.join('') + data.match(/lang="stylus"\s?>([\s\S]+?)<\/style>/i)[1];
+						const searchResult = data.match(/lang="stylus"\s*[a-z]*>([\s\S]+?)<\/style>/i);
+
+						if (!searchResult) {
+							return;
+						}
+
+						data = lineBreaks.join('') + searchResult[1];
 					}
 
 					stylint(data, options.rules)
