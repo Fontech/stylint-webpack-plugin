@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git@github.com:Fontech/stylint-webpack-plugin.git"
   },
-  "author": "Fontech",
+  "author": "Fontech <service@fontech.com.tw>",
   "license": "MIT",
   "engines": {
     "node": ">=6.4.0"
