@@ -36,25 +36,29 @@ class StylintWebpackPlugin {
 						throw new Error(err);
 					}
 
-					if (/\.vue$/.test(file)) {
-						const lineBreaks = [];
-						const strings = data.split('\n');
+					const lineBreaks = ['\n'];
+					const strings = data.split('\n');
+					let lintContent = '';
 
+					if (/\.vue$/.test(file)) {
 						strings.some(str => {
 							if (/lang="stylus"/.test(str)) {
 								return true;
-							} else {
-								lineBreaks.push('\n');
 							}
 						});
 
-						const searchResult = data.match(/lang="stylus"\s*[a-z]*>([\s\S]+?)<\/style>/i);
+						lintContent = data.match(/lang="stylus"\s*[a-z]*>([\s\S]+?)<\/style>/i);
 
-						if (!searchResult) {
+						if (!lintContent) {
 							return;
 						}
 
-						data = lineBreaks.join('') + searchResult[1];
+						data = lineBreaks.join('') + lintContent[1];
+					}
+
+					if (/\.styl$/.test(file)) {
+
+						data = lineBreaks.join('') + data;
 					}
 
 					stylint(data, options.rules)
