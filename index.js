@@ -86,7 +86,7 @@ class StylintWebpackPlugin {
 									msg += `\n${this.cache.msg}`;
 
 									console.log(msg); // print in terminal
-									stats.compilation.errors.push(msg) // print at site
+									stats.compilation.errors.push(msg) // print error on the web site
 								}
 
 								this.resetOnChange();
