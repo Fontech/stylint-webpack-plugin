@@ -20,7 +20,9 @@ class StylintWebpackPlugin {
 		compiler.hooks.done.tapAsync('StylintWebpackPlugin', (stats, callback) => {
 			this.searchFiles(stats);
 
-			callback();
+			setTimeout(function() {
+        callback();
+      }, 100);
 		});
 	}
 
