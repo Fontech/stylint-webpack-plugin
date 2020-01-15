@@ -47,12 +47,13 @@ export default {
     ...,
 
     build: {
-    extend (config, ctx) {
-        if (ctx.isDev && ctx.isClient) {
-            config.plugins.push(new StylintWebpackPlugin({
-                files: ['./pages', './assets'],
-            }));
-        }
+        extend (config, ctx) {
+            if (ctx.isDev && ctx.isClient) {
+                config.plugins.push(new StylintWebpackPlugin({
+                    files: ['./pages', './assets'],
+                }));
+            }
+        },
     },
 
     ...,
